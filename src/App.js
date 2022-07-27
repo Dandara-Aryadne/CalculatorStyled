@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import img from "./IMG/naruto1.png";
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
+import responsive from "./IMG/responsive.png";
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -13,10 +14,20 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Body = styled.body`
+  position: relative;
   background-image: url(${img});
   background-size: cover;
   width: 100%;
   height: 100vh;
+  @media only screen and (min-width: 360px) and (max-width: 800px) {
+    position: relative;
+    background-image: url(${responsive});
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+  }
 `;
 
 const Division = styled.button`
@@ -40,6 +51,8 @@ const Main = styled.div`
   border-radius: 30px;
   box-shadow: 3px 3px 2px rgba(83, 5, 5, 0.8);
   margin-left: 20%;
+  margin-top: 10vh;
+  position: absolute;
 `;
 const TituloUm = styled.h1`
   color: rgba(83, 5, 5, 0.8);
@@ -53,6 +66,13 @@ const TituloDois = styled.h2`
 const Input = styled.input`
   font-size: 3vw;
   border-radius: 10px;
+  width: 30%;
+  margin-left: 35%;
+  @media only screen and (min-width: 360px) and (max-width: 800px) {
+    width: 35%;
+    height: 5.5vh;
+    margin-left: 35%;
+  }
 `;
 const BoxInput = styled.section`
   height: 20vh;
